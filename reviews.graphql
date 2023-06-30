@@ -1,0 +1,17 @@
+type Review @key(fields: "id") {
+  id: ID!
+  rating: Float
+  content: String
+}
+
+type ReviewSummary {
+  totalReviews: Int
+  averageRating: Float
+}
+
+extend type Product @key(fields: "id") {
+  id: ID! @external
+  reviews: [Review]
+  reviewSummary: ReviewSummary
+}
+
