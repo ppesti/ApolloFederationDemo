@@ -1,0 +1,7 @@
+cors:
+  origins:
+    - http://localhost:4000 # Allows any locally-running client to run against your Router
+    - https://studio.apollographql.com # Allows Apollo Studio to still run queries against your Router
+
+# more security settings can be included in this file such as jwt auth, operation limits, privacy and data collection...
+# in this demo, this file is not contributing to any importart features

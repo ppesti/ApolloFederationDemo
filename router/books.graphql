@@ -1,0 +1,12 @@
+type Book @key(fields: "id") @key(fields: "authorId") {
+  id: ID!
+  title: String!
+  authorId: ID!
+  pages: Int
+}
+
+extend type Query {
+  books: [Book]
+  book(id: ID!): Book
+}
+

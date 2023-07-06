@@ -1,0 +1,23 @@
+{
+  "name": "authorsapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "authors.js",
+  "scripts": {
+    "start": "node author.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/federation": "0.14.0",
+    "@apollo/gateway": "0.14.0",
+    "apollo-server": "2.12.0",
+    "graphql": "15.0.0",
+    "typescript": "4.3.2",
+    "walk-sync": "2.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.2"
+  },
+  "keywords": []
+}
