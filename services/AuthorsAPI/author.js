@@ -9,15 +9,6 @@ const server = new ApolloServer({
 });
 
 const app = express();
-
-// parse JSON body
-app.use(express.json()); 
-// log request to the console
-app.use((req, res, next) => {
-  console.log(req.headers, req.body);
-  next();
-});
-
 server.applyMiddleware({ app });
 
 app.listen({ port: 4004 }, () => {
