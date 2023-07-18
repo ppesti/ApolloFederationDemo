@@ -14,9 +14,6 @@ const resolvers = {
             return books.find((p) => p.id == args.id);
         },
     },
-    Author: {
-        author: a => books.filter(book => book.authorId == a.id)
-    },
 };
 
 module.exports = resolvers;
