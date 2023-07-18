@@ -1,12 +1,12 @@
 const { gql } = require('apollo-server');
 
 const typeDefs = gql`
-  type Book @key(fields: "id") @key(fields: "authorId") {
+  type Book {
     id: ID!
     title: String!
     authorId: ID!
     pages: Int
-    hardcover: Boolean # this is a required field of books2api, but not present in booksapi1
+    hardcover: Boolean! # this field is only present in books2api
   }
 
   type Query {

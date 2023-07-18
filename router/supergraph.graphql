@@ -31,6 +31,7 @@ type Book
 {
   author: Author @join__field(graph: AUTHORS)
   authorId: ID! @join__field(graph: BOOKS)
+  hardcover: Boolean @join__field(graph: BOOKS)
   id: ID! @join__field(graph: BOOKS)
   pages: Int @join__field(graph: BOOKS)
   title: String! @join__field(graph: BOOKS)
@@ -59,6 +60,6 @@ scalar join__FieldSet
 
 enum join__Graph {
   AUTHORS @join__graph(name: "authors" url: "http://localhost:4004/graphql")
-  BOOKS @join__graph(name: "books" url: "http://localhost:4003/graphql")
+  BOOKS @join__graph(name: "books" url: "http://localhost:4008/graphql")
 }
 
