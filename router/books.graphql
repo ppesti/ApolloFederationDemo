@@ -3,9 +3,10 @@ type Book @key(fields: "id") @key(fields: "authorId") {
   title: String!
   authorId: ID!
   pages: Int
+  hardcover: Boolean
 }
 
-extend type Query {
+type Query {
   books: [Book]
   book(id: ID!): Book
 }

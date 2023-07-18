@@ -1,6 +1,7 @@
 subgraphs:
   books:
-    routing_url: http://localhost:4003/graphql
+    # this is the unified book api
+    routing_url: http://localhost:4008/graphql
     schema:
       file: ./books.graphql
   authors:

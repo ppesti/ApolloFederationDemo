@@ -1,5 +1,5 @@
 {
-  "name": "booksapi",
+  "name": "books2api",
   "version": "1.0.0",
   "description": "",
   "main": "book.js",
@@ -12,7 +12,6 @@
     "@apollo/federation": "0.14.0",
     "@apollo/gateway": "0.14.0",
     "apollo-server": "2.12.0",
-    "axios": "^1.4.0",
     "graphql": "15.0.0"
   },
   "devDependencies": {
