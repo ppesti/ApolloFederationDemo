@@ -33,24 +33,16 @@ const resolvers = {
         `; // Send it to Books2API
 
         // Sending to Books1API
-        try {
-            const response = await axios.post(B1URI, {
-                query: BOOKS_WITHOUT_HARDCOVER,
-            });
-
-            // console.log(JSON.stringify(response.data));
-            retVal.push(...response.data.data.books);       
+        try {            
+            const response = await sendGraphQLRequest(B1URI, BOOKS_WITHOUT_HARDCOVER);
+            retVal.push(...response.data.data.books);
         } catch (error) {
             console.error(error);
         }
 
         // Sending to Books2API
         try {
-            const response = await axios.post(B2URI, {
-                query: BOOKS_WITH_HARDCOVER,
-            });
-
-            // console.log(JSON.stringify(response.data));
+            const response = await sendGraphQLRequest(B2URI, BOOKS_WITH_HARDCOVER);
             retVal.push(...response.data.data.books);
         } catch (error) {
             console.error(error);
@@ -95,20 +87,14 @@ const resolvers = {
         // send request based on bookId range
         if (parsedInt <= B1_LIMIT) { // it is in Books1API
             try {
-                const response = await axios.post(B1URI, {
-                    query: BOOK_WITHOUT_HARDCOVER,
-                });
-
+                const response = await sendGraphQLRequest(B1URI, BOOK_WITHOUT_HARDCOVER);
                 return response.data.data.book;
             } catch (error) {
                 console.error(error);
             }
         } else if (parsedInt <= B2_LIMIT) { // it is in Books2API
             try {
-                const response = await axios.post(B2URI, {
-                    query: BOOK_WITH_HARDCOVER,
-                });
-
+                const response = await sendGraphQLRequest(B2URI, BOOK_WITH_HARDCOVER);
                 return response.data.data.book;
             } catch (error) {
                 console.error(error);
@@ -121,6 +107,12 @@ const resolvers = {
   Author: { // TODO: fix this, because books is not gonna work in this state
     author: (a) => books.filter((book) => book.authorId == a.id),
   },
+};
+
+const sendGraphQLRequest = async (uri, query) => {
+    return await axios.post(uri, {
+        query: query,
+    });
 };
 
 module.exports = resolvers;
