@@ -104,7 +104,7 @@ const resolvers = {
         return null; // it is not contained
     },
   },
-  Author: { // TODO: fix this, because books is not gonna work in this state
+  Author: {
     author: (a) => books.filter((book) => book.authorId == a.id),
   },
 };

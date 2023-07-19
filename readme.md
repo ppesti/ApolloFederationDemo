@@ -20,7 +20,8 @@ Here are some useful resources where you can learn about all Apollo Products and
           /            \
 Router - <              Book2 API
           \
-           Author API
+           Author API - Author REST 
+                        Data Source
 ```
 
 **Router**: the entry point for all requests (via Apollo Router)
@@ -38,3 +39,7 @@ Router - <              Book2 API
 **Book2 APIs**: has fields id, authorId, title, pages, hardcover
 
 **Author API**: the API for the authors of all Book APIs' contents (both Book1 and Book2 APIs)
+  - fetches data from the Author REST API, which returns more fields, than what the Author GQL API needs
+
+**Author REST DS**: returns data of authors as response of GET requests
+  - same functionality as the Author GQL API's, but fetches more fields
