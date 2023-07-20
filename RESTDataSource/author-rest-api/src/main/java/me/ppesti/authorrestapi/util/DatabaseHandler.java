@@ -16,7 +16,12 @@ public class DatabaseHandler {
             new Author("a5", "J.R.R. Tolkien", "British"),
             new Author("a6", "Virginia Woolf", "British"),
             new Author("a7", "J.D. Salinger", "American"),
-            new Author("a8", "Aldous Huxley", "British")
+            new Author("a8", "Aldous Huxley", "British"),
+            new Author("a9", "Leo Tolstoy", "Russian"),
+            new Author("a10", "Herman Melville", "American"),
+            new Author("a11", "Lewis Carroll", "British"),
+            new Author("a12", "Homer", "Greek"),
+            new Author("a13", "John Steinbeck", "American")
     );
 
     public Collection<Author> getAuthors() {
